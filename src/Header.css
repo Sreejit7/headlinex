@@ -1,0 +1,12 @@
+.header{
+  position: sticky;
+  background-color: black;
+  color: white;
+  height: 40px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.header > h1{
+  margin-left: 50px;
+}
