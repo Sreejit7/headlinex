@@ -1,19 +1,19 @@
 import React from 'react'
 import {ExternalLink} from 'react-external-link';
 import './Headline.css';
-function Headline({news}) {
+function Headline({news, toggle}) {
   return (
-    <div className = "headline">   
+    <div className = {`headline ${toggle && "headline__toggle"}`}>   
       <img className = "headline__image"
            src = {news.image}
            alt = ""
       />    
       <div className="headline__content">
         <ExternalLink href = {news.url}>
-          <h2 className = "headline__title">{news.title}</h2>
+          <h2 className = {`headline__title ${toggle && "headline__title__toggle"}`}>{news.title}</h2>
         </ExternalLink>
-        <p className = "news__author"> - By {news.author?news.author:news.source.name} at {news.publishedAt}</p>
-        <p className = "news__desc">{news.description}</p>
+        <p className = {`news__author ${toggle && "toggled"}`}> - By {news.author?news.author:news.source.name} at {news.publishedAt}</p>
+        <p className = {`news__desc ${toggle && "toggled"}`}>{news.description}</p>
       </div>
      
     </div>

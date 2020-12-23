@@ -6,7 +6,6 @@ import Header from './Header';
 import './index.css';
 ReactDOM.render(
   <Router>
-    <Header/>
     <Switch>
       <Route path = '/'>
        <App/>

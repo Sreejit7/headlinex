@@ -1,12 +1,21 @@
 .header{
   position: sticky;
-  background-color: black;
-  color: white;
-  height: 40px;
+  background-color: rgb(211, 210, 206);
+  color: rgb(24, 23, 23);
+  
   margin-top: 0px;
-  margin-bottom: 20px;
   padding: 10px;
 }
+.header__toggle{
+  background-color: rgb(11, 6, 29);
+  color: white;
+}
 .header > h1{
-  margin-left: 50px;
+  text-align: center;
+}
+@media(max-width: 550px){
+  .header{
+    height: 30px;
+    font-size: small;
+  }
 }
