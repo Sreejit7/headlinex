@@ -7,36 +7,16 @@
 .app-dark{
   background-color: rgb(6, 38, 85);
 }
-.app__switch{
-  margin-left: 80%;
-}
-@media(min-width: 400px){
-  .app__switch{
-    margin-left: 82%;
-  }
-}
-@media(min-width: 500px){
-  .app__switch{
-    margin-left: 85%;
-  }
-}
-@media(min-width: 650px){
-  .app__switch{
-    margin-left: 88%;
-  }
-}
-@media(min-width: 800px){
-  .app__switch{
-    margin-left: 90%;
-  }
-}
-@media(min-width: 950px){
-  .app__switch{
-    margin-left: 92%;
-  }
-}
-@media(min-width: 1024px){
-  .app__switch{
-    margin-left: 95%;
-  }
+.news__input{
+  width: 250px;
+  margin-right: 50px;
+  margin-left: 20px;
+  border-radius: 10px;
+  outline-width: 0;
+  font-size: 1rem;
+  border: none;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+  top: 1%;
 }

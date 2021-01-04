@@ -1,13 +1,18 @@
 .header{
   position: sticky;
-  background-color: rgb(211, 210, 206);
+  background-color: rgba(211, 210, 206, 0.938);
   color: rgb(24, 23, 23);
-  
-  margin-top: 0px;
+  top: 0px;
+  left: 0;
+  right: 0;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 .header__toggle{
-  background-color: rgb(11, 6, 29);
+  background-color: rgba(11, 6, 29, 0.918);
   color: white;
 }
 .header > h1{
