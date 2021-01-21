@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import Headline from './Headline';
 import './App.css';
+import {FaSearch} from 'react-icons/fa';
 import Switch from './Switch';
 import Header from './Header';
 function App() {
@@ -13,12 +14,12 @@ function App() {
   
   const changeInput = (e) => {
     setInput(e.target.value);
-    if(input !== "")
-      setInputOn(true);
-    else
+    if(input === "")
       setInputOn(false);
   };
-  
+  const handleClick = (e) => {
+    setInputOn(true);
+  }
 
   useEffect(() => {
     const url = inputOn? `https://gnews.io/api/v4/search?q=${input}&lang=en&sortby=publishedAt&token=f556748f6689e5c7a5c0444335cded03` :'https://gnews.io/api/v4/top-headlines?lang=en&sortby=publishedAt&token=f556748f6689e5c7a5c0444335cded03';
@@ -29,13 +30,16 @@ function App() {
       setNewsList(data.articles);
     })
     .catch((err) => console.log(err.message));
-  }, [input]);
+  }, [inputOn]);
   //console.log(newsList);
   return (
     <div className = "app">
       <Header toggle = {isToggled}/>
       <div className = {`app__body ${isToggled && "app-dark"}`}>
+        <div className="input__search">
         <input className = "news__input" placeholder = "Looking for something specific?" value = {input} onChange = {changeInput}/>
+        <FaSearch className = "search-icon" onClick = {handleClick} />
+        </div>
         <div className="app__switch">
           <Switch isToggled = {isToggled} onToggle = {() => setIsToggled(!isToggled)}/> 
         </div>

@@ -1,22 +1,62 @@
 .app__body{
   background-color: rgb(253, 246, 239);
-  padding: 10px;
+  background-image: url('./galaxy.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 15px;
   height: 100vh;
   overflow-y: scroll;
 }
 .app-dark{
   background-color: rgb(6, 38, 85);
 }
+.input__search{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 1%;
+  z-index: 2;
+  border-radius: 20px;
+}
 .news__input{
   width: 250px;
-  margin-right: 50px;
+  margin-right: 0px;
   margin-left: 20px;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
   outline-width: 0;
   font-size: 1rem;
   border: none;
   padding: 10px;
-  position: absolute;
-  z-index: 2;
-  top: 1%;
+}
+.search-icon{
+  background-color: rgb(125, 188, 224);
+  padding: 11px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+}
+.search-icon:hover{
+  opacity: 0.6;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+} 
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #cccccc;
+  box-shadow: inset 0 0 5px grey;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(21, 20, 22);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(142, 115, 163);
 }
