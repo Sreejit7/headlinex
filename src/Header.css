@@ -1,6 +1,6 @@
 .header{
   position: sticky;
-  background-color: rgb(235, 235, 231);
+  background-color: rgb(235, 235, 231); 
   color: rgb(24, 23, 23);
   top: 0px;
   left: 0;
@@ -9,7 +9,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: 2;
+}
+.header-logo{
+  width: 200px;
+  object-fit: contain;
 }
 .header__toggle{
   background-color: rgba(11, 6, 29, 0.918);

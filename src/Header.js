@@ -1,4 +1,5 @@
-import React,{useEffect, useState} from 'react'
+import React,{useEffect, useState} from 'react';
+import Logo from './header-logo.png';
 import './Header.css';
 function Header({toggle}) {
   const [scrollNav, setScrollNav] = useState(false);
@@ -19,7 +20,7 @@ function Header({toggle}) {
   }, []);
   return (
     <div className = {`header ${toggle && "header__toggle"} ${scrollNav && "scrolling"}`}>
-      <h1>HEADLINER</h1>
+     <img alt = "" src = {Logo} className = "header-logo"/>
     </div>
   )
 }
