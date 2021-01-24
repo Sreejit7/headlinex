@@ -5,7 +5,7 @@ function Header({toggle}) {
   const [scrollNav, setScrollNav] = useState(false);
   useEffect(() => {
     const changeNav = () => {
-      if(window.scrollY >= 80){
+      if(window.scrollY >= 30){
         setScrollNav(true);
       }
       else{

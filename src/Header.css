@@ -1,8 +1,8 @@
 .header{
   position: sticky;
-  background-color: rgb(235, 235, 231); 
-  color: rgb(24, 23, 23);
-  top: 0px;
+  /* background-color: rgb(235, 235, 231);  */
+  color: rgb(255, 242, 242);
+  top: 0;
   left: 0;
   right: 0;
   padding: 10px;
@@ -10,17 +10,24 @@
   align-items: center;
   justify-content: center;
   z-index: 2;
+  background: transparent;
+  background-color: rgba(238, 232, 232, 0.158);
+  backdrop-filter: blur(5px);
 }
 .header-logo{
   width: 200px;
   object-fit: contain;
 }
 .header__toggle{
-  background-color: rgba(11, 6, 29, 0.918);
+  background-color: rgba(11, 6, 29, 0.89);
   color: white;
 }
 .header > h1{
   text-align: center;
+}
+.scrolling{
+  background-color: rgba(185, 20, 20, 0.925);
+  backdrop-filter: blur(10px);
 }
 @media(max-width: 550px){
   .header{

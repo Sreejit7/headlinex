@@ -21,6 +21,7 @@
 }
 .headline:nth-child(odd){
   background-color: rgb(227, 227, 228);
+  box-shadow: 2px 2px 1px 2px rgb(39, 211, 168);
 }
 .headline__toggle:nth-child(odd){
   background-color: rgb(12, 162, 182);
@@ -50,7 +51,7 @@
   height: 200px;
   object-fit: contain;
   z-index: 1;
-  opacity: 0.25;
+  opacity: 0.2;
   position: absolute;
   right: 0;
 }
