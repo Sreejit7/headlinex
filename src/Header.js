@@ -5,7 +5,7 @@ function Header({toggle}) {
   const [scrollNav, setScrollNav] = useState(false);
   useEffect(() => {
     const changeNav = () => {
-      if(window.scrollY >= 30){
+      if(window.scrollY >= 60){
         setScrollNav(true);
       }
       else{
@@ -20,7 +20,7 @@ function Header({toggle}) {
   }, []);
   return (
     <div className = {`header ${toggle && "header__toggle"} ${scrollNav && "scrolling"}`}>
-     <img alt = "" src = {Logo} className = "header-logo"/>
+     <h1 className = "header__title">HEADLINER</h1>
     </div>
   )
 }

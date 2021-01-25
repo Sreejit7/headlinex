@@ -18,7 +18,8 @@ function App() {
       setInputOn(false);
   };
   const handleClick = (e) => {
-    setInputOn(true);
+    if(input !== "")
+      setInputOn(true);
   }
 
   useEffect(() => {

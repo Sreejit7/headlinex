@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 .header{
   position: sticky;
   /* background-color: rgb(235, 235, 231);  */
-  color: rgb(255, 242, 242);
+
   top: 0;
   left: 0;
   right: 0;
@@ -11,8 +12,7 @@
   justify-content: center;
   z-index: 2;
   background: transparent;
-  background-color: rgba(238, 232, 232, 0.158);
-  backdrop-filter: blur(5px);
+  background: transparent;
 }
 .header-logo{
   width: 200px;
@@ -22,11 +22,14 @@
   background-color: rgba(11, 6, 29, 0.89);
   color: white;
 }
-.header > h1{
+.header__title{
   text-align: center;
+  font-family: 'Righteous', cursive;
+  color: rgb(248, 128, 29);
+  text-shadow: 5px 5px 2px 2px rgb(99, 99, 211);
 }
 .scrolling{
-  background-color: rgba(185, 20, 20, 0.925);
+  /* background-color: rgba(137, 188, 223, 0.103); */
   backdrop-filter: blur(10px);
 }
 @media(max-width: 550px){
