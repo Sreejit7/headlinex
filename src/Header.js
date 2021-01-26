@@ -1,7 +1,8 @@
 import React,{useEffect, useState} from 'react';
-import Logo from './header-logo.png';
+import {FaSearch} from 'react-icons/fa';
+import {HashLink} from 'react-router-hash-link';
 import './Header.css';
-function Header({toggle}) {
+function Header({toggle, search}) {
   const [scrollNav, setScrollNav] = useState(false);
   useEffect(() => {
     const changeNav = () => {
@@ -20,7 +21,8 @@ function Header({toggle}) {
   }, []);
   return (
     <div className = {`header ${toggle && "header__toggle"} ${scrollNav && "scrolling"}`}>
-     <h1 className = "header__title">HEADLINER</h1>
+      <FaSearch className = "header__search" onClick = {search}/>
+    <HashLink smooth to = "#top" className = 'logo-link'> <h1 className = {`header__title`}>HEADLINER</h1> </HashLink>
     </div>
   )
 }

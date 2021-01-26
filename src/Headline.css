@@ -84,4 +84,7 @@
     flex-direction: column;
     margin-bottom: 10px;
   }
+  .logo-image{
+    opacity: 0;
+  }
 }

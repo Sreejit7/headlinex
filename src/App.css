@@ -6,7 +6,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 15px;
-  margin-top: -5%;
+  margin-top: -10vh;
+  padding-bottom: 80px;
 }
 .app-dark{
   background-color: rgb(6, 38, 85);
@@ -17,24 +18,35 @@
   position: fixed;
   top: 1%;
   left: 1%;
-  z-index: 3;
-  border-radius: 20px;
+  z-index: 5;
+  padding: 5px;
+}
+.input__search.active{
+  top: 0;
+  left: 0;
+  padding: 15px;
+  transition: 500ms ease-in-out;
+  backdrop-filter: blur(20px);
 }
 .news__input{
   width: 250px;
-  margin-right: 0px;
-  margin-left: 20px;
   border-top-left-radius: 10px;
   outline-width: 0;
   font-size: 1rem;
   border: none;
   padding: 10px;
+  
+  background: rgb(26,244,122);
+  background: linear-gradient(180deg, rgba(26,244,122,1) 0%, rgba(90,237,182,1) 46%, rgba(8,156,255,1) 100%);
+  color: black;
 }
 .search-icon{
-  background-color: rgb(125, 188, 224);
+  background: rgb(26,244,122);
+  background: linear-gradient(180deg, rgba(26,244,122,1) 0%, rgba(90,237,182,1) 46%, rgba(8,156,255,1) 100%);
   padding: 11px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
+  font-size: 1rem;
 }
 .search-icon:hover{
   opacity: 0.6;
@@ -61,4 +73,20 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(142, 115, 163);
+}
+@media(max-width: 768px){
+  .input__search{
+    top: -100%;
+    width: 100vw;
+    left: 0;
+  }
+}
+@media(max-width: 425px){
+  .news__input{
+    width: 200px;
+    font-size: 0.9rem;
+  }
+  .search-icon{
+    font-size: 0.9rem;
+  }
 }

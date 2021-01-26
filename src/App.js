@@ -4,6 +4,7 @@ import './App.css';
 import {FaSearch} from 'react-icons/fa';
 import Switch from './Switch';
 import Header from './Header';
+import Footer from './Footer';
 function App() {
   const [newsList, setNewsList] = useState([]);
   const [input, setInput] = useState("");
@@ -11,6 +12,7 @@ function App() {
   const [isToggled, setIsToggled] = useState(false);
   //const currentDate = new Date().toISOString();
   //console.log(currentDate);
+  const[searchOn, setSearchOn] = useState(false);
   
   const changeInput = (e) => {
     setInput(e.target.value);
@@ -20,6 +22,8 @@ function App() {
   const handleClick = (e) => {
     if(input !== "")
       setInputOn(true);
+    if(searchOn)
+      setSearchOn(false);
   }
 
   useEffect(() => {
@@ -35,9 +39,9 @@ function App() {
   //console.log(newsList);
   return (
     <div className = "app">
-      <Header toggle = {isToggled}/>
+      <Header toggle = {isToggled} search = {() => setSearchOn(!searchOn)}/>
       <div className = {`app__body ${isToggled && "app-dark"}`}>
-        <div className="input__search">
+        <div className = {`input__search ${searchOn && "active"}`}>
         <input className = "news__input" placeholder = "Looking for something specific?" value = {input} onChange = {changeInput}/>
         <FaSearch className = "search-icon" onClick = {handleClick} />
         </div>
@@ -46,10 +50,11 @@ function App() {
         </div>
         <div className="app__news">
           {newsList.map((news) => (
-            <Headline news = {news} toggle = {isToggled}/>
+            <Headline news = {news} toggle = {isToggled} />
           ))}
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
