@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react'
+import { motion } from "framer-motion"
 import Headline from './Headline';
 import './App.css';
 import {FaSearch} from 'react-icons/fa';
@@ -41,10 +42,14 @@ function App() {
     <div className = "app">
       <Header toggle = {isToggled} search = {() => setSearchOn(!searchOn)}/>
       <div className = {`app__body ${isToggled && "app-dark"}`}>
-        <div className = {`input__search ${searchOn && "active"}`}>
+        <motion.div 
+          initial = {{y: '-10vh'}}
+          animate = {{y: 0}}
+          transition = {{type: 'spring', stiffness: 100, delay: 0.45, duration: 0.5}}
+          className = {`input__search ${searchOn && "active"}`}>
         <input className = "news__input" placeholder = "Looking for something specific?" value = {input} onChange = {changeInput}/>
         <FaSearch className = "search-icon" onClick = {handleClick} />
-        </div>
+        </motion.div>
         <div className="app__switch">
           <Switch isToggled = {isToggled} onToggle = {() => setIsToggled(!isToggled)}/> 
         </div>

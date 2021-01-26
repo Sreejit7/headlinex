@@ -1,10 +1,15 @@
 import React from 'react'
 import {ExternalLink} from 'react-external-link';
+import {motion} from 'framer-motion';
 import './Headline.css';
 import Headlinebg from './headline-bg.png';
 function Headline({news, toggle}) {
   return (
-    <div className = {`headline ${toggle && "headline__toggle"}`}>   
+    <motion.div 
+      initial = {{x: '-100vw'}}
+      animate ={{x: 0}}
+      transition = {{type: 'spring', delay: 0.5, duration: 0.75, stiffness: 80}}
+      className = {`headline ${toggle && "headline__toggle"}`}>   
       <img className = "headline__image"
            src = {news.image}
            alt = ""
@@ -17,7 +22,7 @@ function Headline({news, toggle}) {
         <p className = {`news__desc ${toggle && "toggled"}`}>{news.description}</p>
       </div>
       <img className = "logo-image" src = {Headlinebg} alt = ""/>
-    </div>
+    </motion.div>
   )
 }
 

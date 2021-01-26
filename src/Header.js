@@ -1,4 +1,5 @@
 import React,{useEffect, useState} from 'react';
+import { motion } from "framer-motion"
 import {FaSearch} from 'react-icons/fa';
 import {HashLink} from 'react-router-hash-link';
 import './Header.css';
@@ -20,10 +21,14 @@ function Header({toggle, search}) {
     }
   }, []);
   return (
-    <div className = {`header ${toggle && "header__toggle"} ${scrollNav && "scrolling"}`}>
+    <motion.div 
+      initial = {{y: '-10vh'}}
+      animate = {{y: 0}}
+      transition = {{type: 'spring', stiffness: 100, delay: 0.45, duration: 0.5}}
+      className = {`header ${toggle && "header__toggle"} ${scrollNav && "scrolling"}`}>
       <FaSearch className = "header__search" onClick = {search}/>
     <HashLink smooth to = "#top" className = 'logo-link'> <h1 className = {`header__title`}>HEADLINER</h1> </HashLink>
-    </div>
+    </motion.div>
   )
 }
 

@@ -8,6 +8,7 @@
   padding: 15px;
   margin-top: -10vh;
   padding-bottom: 80px;
+  min-height: 100vh;
 }
 .app-dark{
   background-color: rgb(6, 38, 85);
