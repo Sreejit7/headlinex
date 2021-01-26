@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
+.footer{
+  height: 50px;
+  width: 100%;
+  /* position: absolute; */
+  position: relative;
+  /* bottom: 0; */
+  background: rgb(26,244,122);
+  background: linear-gradient(180deg, rgba(26,244,122,1) 0%, rgba(90,237,182,1) 46%, rgba(8,156,255,1) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h3{
+  font-family: 'Dosis', sans-serif;
+  font-size: 1.5rem;
+}
+.top-icon{
+  font-size: 2rem;
+  position: absolute;
+  bottom: 55px;
+  padding: 5px;
+  background-color: rgb(84, 163, 228);
+  background: linear-gradient(180deg, rgb(26, 244, 244) 0%, rgb(75, 188, 223) 46%, rgb(12, 139, 224) 100%);
+  color: white;
+  border-radius: 50%;
+  animation: jumping 0.5s ease-in-out infinite;
+  cursor: pointer;
+}
+.top-icon:hover{
+  opacity: 0.75;
+}
+@keyframes jumping{
+  from{
+    transform: translateY(-1px);
+  }
+  to{
+    transform: translateY(1px);
+  }
+}
+@media(max-width: 768px){
+  .top-icon{
+    left: 45%;
+  }
+  
+}
