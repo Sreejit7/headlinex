@@ -84,7 +84,7 @@
 }
 @media(max-width: 425px){
   .news__input{
-    width: 200px;
+    width: 220px;
     font-size: 0.9rem;
   }
   .search-icon{

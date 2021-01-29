@@ -25,6 +25,9 @@ function App() {
       setInputOn(true);
     if(searchOn)
       setSearchOn(false);
+    if(window.scrollY > 10){
+      window.scrollTo(0, 0);
+    }
   }
 
   useEffect(() => {
