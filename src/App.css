@@ -1,19 +1,14 @@
-
-.app__body{
-  background-color: rgb(253, 246, 239);
-  background-image: url('./galaxy.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+.app__body {
+  background-color: #1f2937;
   background-size: cover;
   padding: 15px;
-  margin-top: -10vh;
   padding-bottom: 80px;
   min-height: 100vh;
 }
-.app-dark{
+.app-dark {
   background-color: rgb(6, 38, 85);
 }
-.input__search{
+.input__search {
   display: flex;
   align-items: center;
   position: fixed;
@@ -22,52 +17,66 @@
   z-index: 5;
   padding: 5px;
 }
-.input__search.active{
+.input__search.active {
   top: 0;
   left: 0;
   padding: 15px;
   transition: 500ms ease-in-out;
   backdrop-filter: blur(20px);
 }
-.news__input{
+.news__input {
   width: 250px;
   border-top-left-radius: 10px;
   outline-width: 0;
   font-size: 1rem;
   border: none;
   padding: 10px;
-  
-  background: rgb(26,244,122);
-  background: linear-gradient(180deg, rgba(26,244,122,1) 0%, rgba(90,237,182,1) 46%, rgba(8,156,255,1) 100%);
+
+  background: rgb(26, 244, 122);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 244, 122, 1) 0%,
+    rgba(90, 237, 182, 1) 46%,
+    rgba(8, 156, 255, 1) 100%
+  );
   color: black;
 }
-.search-icon{
-  background: rgb(26,244,122);
-  background: linear-gradient(180deg, rgba(26,244,122,1) 0%, rgba(90,237,182,1) 46%, rgba(8,156,255,1) 100%);
+.search-icon {
+  background: rgb(26, 244, 122);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 244, 122, 1) 0%,
+    rgba(90, 237, 182, 1) 46%,
+    rgba(8, 156, 255, 1) 100%
+  );
   padding: 11px;
   border-bottom-right-radius: 10px;
   cursor: pointer;
   font-size: 1rem;
 }
-.search-icon:hover{
+.search-icon:hover {
   opacity: 0.6;
 }
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
-} 
+}
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #cccccc;
   box-shadow: inset 0 0 5px grey;
-
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(26,244,122);
-  background: linear-gradient(180deg, rgba(26,244,122,1) 0%, rgba(90,237,182,1) 46%, rgba(8,156,255,1) 100%);
+  background: rgb(26, 244, 122);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 244, 122, 1) 0%,
+    rgba(90, 237, 182, 1) 46%,
+    rgba(8, 156, 255, 1) 100%
+  );
   border-radius: 10px;
 }
 
@@ -75,19 +84,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(142, 115, 163);
 }
-@media(max-width: 768px){
-  .input__search{
+@media (max-width: 768px) {
+  .input__search {
     top: -100%;
     width: 100vw;
     left: 0;
   }
 }
-@media(max-width: 425px){
-  .news__input{
+@media (max-width: 425px) {
+  .news__input {
     width: 220px;
     font-size: 0.9rem;
   }
-  .search-icon{
+  .search-icon {
     font-size: 0.9rem;
   }
 }

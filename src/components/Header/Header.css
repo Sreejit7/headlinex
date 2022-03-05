@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+.header-logo {
+  width: 200px;
+  object-fit: contain;
+}
+.header__toggle {
+  background-color: rgba(11, 6, 29, 0.89);
+  color: white;
+}
+.header__title {
+  text-align: center;
+  font-family: "Righteous", cursive;
+  color: rgb(5, 2, 29);
+  text-shadow: 5px 5px 2px 2px rgb(99, 99, 211);
+  background: rgb(26, 244, 122);
+  background: linear-gradient(
+    180deg,
+    rgba(26, 244, 122, 1) 0%,
+    rgba(90, 237, 182, 1) 46%,
+    rgba(8, 156, 255, 1) 100%
+  );
+  padding: 3px 10px;
+  border-radius: 50%;
+}
+.header__title:hover {
+  opacity: 0.8;
+}
+.scrolling {
+  background-color: rgba(137, 188, 223, 0.103);
+  backdrop-filter: blur(10px);
+  color: black;
+}
+.logo-link {
+  text-decoration: none;
+}
+@media (max-width: 550px) {
+  .header {
+    height: 30px;
+    font-size: small;
+  }
+}
+@media (max-width: 768px) {
+  .header__search {
+    display: block;
+  }
+}
