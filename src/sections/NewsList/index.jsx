@@ -4,9 +4,7 @@ import { useSearchContext } from "../../contexts/useSearchContext";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useFetch } from "../../hooks/useFetch";
 
-const token = process.env.REACT_APP_GNEWS_API_TOKEN;
-const baseUrl = "https://gnews.io/api/v4/";
-const suffixUrl = `lang=en&sortby=publishedAt&token=${token}`;
+const newBaseUrl = "https://newsapi.org/v2/top-headlines?language=en";
 
 const NewsList = () => {
   const [url, setUrl] = React.useState("");
@@ -21,9 +19,9 @@ const NewsList = () => {
 
   React.useEffect(() => {
     if (debouncedSearchValue) {
-      setUrl(`${baseUrl}search?q=${debouncedSearchValue}&${suffixUrl}`);
+      setUrl(`${newBaseUrl}&q=${debouncedSearchValue}`);
     } else {
-      setUrl(`${baseUrl}top-headlines?${suffixUrl}`);
+      setUrl(newBaseUrl);
     }
   }, [debouncedSearchValue]);
 
@@ -48,7 +46,7 @@ const NewsList = () => {
             <p>
               {" "}
               If this error says daily request limit reached, it's because the
-              owner isn't yet reach enough to afford the premium plan 😔
+              owner isn't yet rich enough to afford the premium plan 😔
             </p>
           </span>
         )}

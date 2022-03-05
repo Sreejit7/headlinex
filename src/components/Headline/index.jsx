@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import "./Headline.css";
 
 function Headline({ news }) {
-
   return (
     <motion.div
       initial={{ x: "-100vw" }}
@@ -12,14 +11,14 @@ function Headline({ news }) {
       transition={{ type: "spring", delay: 0.5, duration: 0.75, stiffness: 80 }}
       className={`headline`}
     >
-      {news.image ? (
+      {news.urlToImage ? (
         <img
           className="headline__image rounded-t-lg rounded-sm md:rounded-l-lg md:rounded-t-sm shadow-lg object-cover h-48 w-full md:w-48"
-          src={news.image}
+          src={news.urlToImage}
           alt={news.title}
         />
       ) : (
-        <div className="headline__image-placeholder shadow-lg rounded-sm font-bold bg-blue-500 text-white">
+        <div className="headline__image-placeholder shadow-lg rounded-t-lg rounded-sm md:rounded-l-lg md:rounded-t-sm flex items-center justify-center font-bold bg-blue-500 text-xl text-white h-48 w-full md:w-48">
           TOP NEWS
         </div>
       )}
