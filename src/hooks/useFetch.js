@@ -9,6 +9,7 @@ export const useFetch = (url) => {
 
   const headers = new Headers();
   headers.append("x-api-key", apiKey);
+  headers.append("Access-Control-Allow-Origin", "*");
 
   React.useEffect(() => {
     setLoading(true);
