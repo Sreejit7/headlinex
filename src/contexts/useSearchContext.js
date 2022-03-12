@@ -6,6 +6,7 @@ export const SearchActionTypes = {
 
 const initialState = {
   search: "",
+  topic: "breaking-news"
 };
 
 const searchReducer = (state = initialState, action) => {

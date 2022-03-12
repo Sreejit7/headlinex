@@ -4,7 +4,10 @@ import { useSearchContext } from "../../contexts/useSearchContext";
 import { useDebounce } from "../../hooks/useDebounce";
 import { useFetch } from "../../hooks/useFetch";
 
-const newBaseUrl = "https://newsapi.org/v2/top-headlines?language=en";
+const token = process.env.REACT_APP_GNEWS_API_TOKEN;
+
+const baseUrl = `https://gnews.io/api/v4/`;
+const suffixUrl = `&lang=en&sortby=publishedAt&token=${token}`;
 
 const NewsList = () => {
   const [url, setUrl] = React.useState("");
@@ -12,16 +15,16 @@ const NewsList = () => {
   const { data: newsList, error, loading } = useFetch(url);
 
   const {
-    state: { search },
+    state: { search, topic },
   } = useSearchContext();
 
   const debouncedSearchValue = useDebounce(search, 500);
 
   React.useEffect(() => {
     if (debouncedSearchValue) {
-      setUrl(`${newBaseUrl}&q=${debouncedSearchValue}`);
+      setUrl(`${baseUrl}search?&q=${debouncedSearchValue}${suffixUrl}`);
     } else {
-      setUrl(newBaseUrl);
+      setUrl(`${baseUrl}top-headlines?&topic=${topic}${suffixUrl}`);
     }
   }, [debouncedSearchValue]);
 

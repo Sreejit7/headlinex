@@ -1,25 +1,20 @@
 import React from "react";
 
-const apiKey = process.env.REACT_APP_NEWS_API_KEY;
-
 export const useFetch = (url) => {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 
-  const headers = new Headers();
-  headers.append("x-api-key", apiKey);
-  headers.append("Access-Control-Allow-Origin", "*");
 
   React.useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
-      await fetch(url, { headers })
+      await fetch(url)
         .then((res) => res.json())
         .then((data) => {
-          if (data.status === "error") {
-            setError(data.message);
-          } else if (data.status === "ok") {
+          if (data.errors) {
+            setError(data.errors[0]);
+          } else if (data.articles) {
             setData(data.articles);
           }
         })

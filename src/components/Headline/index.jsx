@@ -11,10 +11,10 @@ function Headline({ news }) {
       transition={{ type: "spring", delay: 0.5, duration: 0.75, stiffness: 80 }}
       className={`headline`}
     >
-      {news.urlToImage ? (
+      {news.image ? (
         <img
           className="headline__image rounded-t-lg rounded-sm md:rounded-l-lg md:rounded-t-sm shadow-lg object-cover h-48 w-full md:w-48"
-          src={news.urlToImage}
+          src={news.image}
           alt={news.title}
         />
       ) : (
