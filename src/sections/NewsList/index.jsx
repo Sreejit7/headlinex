@@ -59,7 +59,9 @@ const NewsList = () => {
   return (
     <ul className="flex flex-col gap-4 md:gap-2 mx-2 my-4">
       {newsList?.map((news) => (
-        <Headline key={news.url} news={news} />
+        <li key={news.url}>
+          <Headline news={news} />
+        </li>
       ))}
     </ul>
   );
