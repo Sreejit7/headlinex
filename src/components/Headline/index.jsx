@@ -5,7 +5,7 @@ import "./Headline.css";
 
 function Headline({ news }) {
   return (
-    <motion.div
+    <motion.section
       initial={{ x: "-100vw" }}
       animate={{ x: 0 }}
       transition={{ type: "spring", delay: 0.5, duration: 0.75, stiffness: 80 }}
@@ -22,7 +22,7 @@ function Headline({ news }) {
           TOP NEWS
         </div>
       )}
-      <div className="headline__content">
+      <section className="headline__content">
         <ExternalLink href={news.url}>
           <h2
             className={`text-2xl font-bold mb-2 transition duration-700 hover:text-blue-500`}
@@ -36,13 +36,13 @@ function Headline({ news }) {
           {new Date(news.publishedAt).toLocaleString()}
         </p>
         <p className={`mt-4 px-2`}>{news.description}</p>
-      </div>
+      </section>
       <img
         className="hidden md:inline absolute top-5 right-0 object-contain h-40 z-1 opacity-25"
         src="/images/headline-bg.png"
         alt="Headliner"
       />
-    </motion.div>
+    </motion.section>
   );
 }
 

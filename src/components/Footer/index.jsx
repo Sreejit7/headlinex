@@ -6,10 +6,18 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer p-4 flex items-center justify-center">
-      <HashLink className="absolute" smooth to="#top">
+      <HashLink
+        aria-label="Scroll to top"
+        className="absolute"
+        smooth
+        to="#top"
+      >
         <MdArrowUpward className="top-icon" />
       </HashLink>
-      <h3 className="font-bold text-lg"> HEADLINER, {new Date().getFullYear()} &copy;</h3>
+      <h3 className="font-bold text-lg">
+        {" "}
+        HEADLINER, {new Date().getFullYear()} &copy;
+      </h3>
     </footer>
   );
 };
