@@ -15,15 +15,18 @@ const TopicCard = ({ topic, active }) => {
   };
 
   return (
-    <span
-      className={`font-medium rounded-sm shadow-lg p-2 bg-gradient-to-b transition duration-700 hover:ease-in from-green-400 to-blue-400 
-                  cursor-pointer hover:from-pink-400 hover:to-blue-500 ${
-                    active && "from-red-500 to-blue-500"
-                  }`}
-      onClick={topicSelectHandler}
-    >
-      {topic.text}
-    </span>
+    <li className="relative h-40 cursor-pointer" onClick={topicSelectHandler}>
+      <div
+        className="absolute h-40 w-full bg-center bg-no-repeat bg-cover inline-block rounded-lg"
+        style={{ backgroundImage: `url(${topic.image})` }}
+      />
+      <div className="absolute h-40 w-full rounded-lg backdrop-blur-sm" />
+      <div className="absolute h-40 w-full rounded-lg bg-gradient-to-b opacity-50 from-gray-600 via-gray-700 to-black" />
+      <div className={`absolute h-40 w-full rounded-lg transition duration-700 shadow-md ${active && "ring-2 ring-red-600"}`} />
+      <article className="absolute h-full w-full transition duration-700 text-white flex items-center justify-center">
+        <h2 className="font-bold text-xl">{topic.text}</h2>
+      </article>
+    </li>
   );
 };
 

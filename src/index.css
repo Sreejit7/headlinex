@@ -10,4 +10,26 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+.react-multiple-carousel__arrow {
+  position: absolute;
+  padding: 4px;
+  width: 50px;
+  background-color: #d85566;
+  transition: 0.5s all ease;
+}
+
+.react-multiple-carousel__arrow:hover {
+  width: 60px;
+  background-color: #bd2035;
+}
+
+.react-multiple-carousel__arrow--left {
+  left: 0 !important;
+}
+
+.react-multiple-carousel__arrow--right {
+  right: 0 !important;
 }
