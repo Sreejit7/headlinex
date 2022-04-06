@@ -27,7 +27,7 @@ const searchReducer = (state = initialState, action) => {
   }
 };
 
-const AppSearchContext = React.createContext(undefined);
+export const AppSearchContext = React.createContext(undefined);
 
 export const AppSearchProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(searchReducer, initialState);
