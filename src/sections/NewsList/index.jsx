@@ -20,13 +20,19 @@ const NewsList = () => {
 
   const debouncedSearchValue = useDebounce(search, 500);
 
+  const debouncedTopicValue = useDebounce(topic, 500);
+
   React.useEffect(() => {
-    if (debouncedSearchValue) {
-      setUrl(`${baseUrl}search?&q=${debouncedSearchValue}${suffixUrl}`);
+    if (debouncedSearchValue && debouncedTopicValue) {
+      setUrl(
+        `${baseUrl}search?&topic=${debouncedTopicValue}&q=${debouncedSearchValue}${suffixUrl}`
+      );
     } else {
-      setUrl(`${baseUrl}top-headlines?&topic=${topic}${suffixUrl}`);
+      setUrl(
+        `${baseUrl}top-headlines?&topic=${debouncedTopicValue}${suffixUrl}`
+      );
     }
-  }, [debouncedSearchValue]);
+  }, [debouncedSearchValue, debouncedTopicValue]);
 
   if (loading || error) {
     return (
@@ -38,7 +44,11 @@ const NewsList = () => {
         >
           {loading
             ? `Loading
-        ${search ? `top news related to ${search}` : `breaking news`}
+        ${
+          search
+            ? `top news related to ${search}`
+            : `${topic === "breaking-news" ? "breaking" : topic} news`
+        }
         , please wait...`
             : `Whoops, an error occurred!`}
         </h1>

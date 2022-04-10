@@ -2,11 +2,12 @@ import React from "react";
 
 export const SearchActionTypes = {
   MODIFY_SEARCH: "MODIFY_SEARCH",
+  SELECT_TOPIC: "SELECT_TOPIC",
 };
 
 const initialState = {
   search: "",
-  topic: "breaking-news"
+  topic: "breaking-news",
 };
 
 const searchReducer = (state = initialState, action) => {
@@ -16,12 +17,17 @@ const searchReducer = (state = initialState, action) => {
         ...state,
         search: action.search,
       };
+    case SearchActionTypes.SELECT_TOPIC:
+      return {
+        ...state,
+        topic: action.topic,
+      };
     default:
       throw new Error("No action of this type exists!");
   }
 };
 
-const AppSearchContext = React.createContext(undefined);
+export const AppSearchContext = React.createContext(undefined);
 
 export const AppSearchProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(searchReducer, initialState);

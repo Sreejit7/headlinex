@@ -1,5 +1,4 @@
 import React from "react";
-import { FaSearch } from "react-icons/fa";
 import {
   SearchActionTypes,
   useSearchContext,
@@ -8,7 +7,10 @@ import {
 const Search = () => {
   const [searchValue, setSearchValue] = React.useState("");
 
-  const { dispatch } = useSearchContext();
+  const {
+    state: { topic },
+    dispatch,
+  } = useSearchContext();
 
   const updateSearchValue = (value) => {
     setSearchValue(value);
@@ -18,6 +20,11 @@ const Search = () => {
       search: value,
     });
   };
+
+  React.useEffect(() => {
+    // Reset search value on topic change
+    updateSearchValue("");
+  }, [topic]);
 
   return (
     <input
