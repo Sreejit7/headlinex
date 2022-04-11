@@ -8,8 +8,8 @@ function Headline({ news }) {
     <motion.section
       initial={{ x: "-100vw" }}
       animate={{ x: 0 }}
-      transition={{ type: "spring", delay: 0.5, duration: 0.75, stiffness: 80 }}
-      className={`headline`}
+      transition={{ type: "spring", delay: 0, duration: 0.2 }}
+      className="flex flex-col md:flex-row relative bg-slate-50 p-2 mb-4 rounded-md transition duration-700 shadow-[0_35px_60px_-15px_red-500]"
     >
       {news.image ? (
         <img
