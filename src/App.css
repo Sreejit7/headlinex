@@ -2,11 +2,8 @@
   background-color: #1f2937;
   background-size: cover;
   padding: 15px;
-  padding-bottom: 80px;
+  padding-bottom: 90px;
   min-height: 100vh;
-}
-.app-dark {
-  background-color: rgb(6, 38, 85);
 }
 .input__search {
   display: flex;
@@ -23,39 +20,6 @@
   padding: 15px;
   transition: 500ms ease-in-out;
   backdrop-filter: blur(20px);
-}
-.news__input {
-  width: 250px;
-  border-top-left-radius: 10px;
-  outline-width: 0;
-  font-size: 1rem;
-  border: none;
-  padding: 10px;
-
-  background: rgb(26, 244, 122);
-  background: linear-gradient(
-    180deg,
-    rgba(26, 244, 122, 1) 0%,
-    rgba(90, 237, 182, 1) 46%,
-    rgba(8, 156, 255, 1) 100%
-  );
-  color: black;
-}
-.search-icon {
-  background: rgb(26, 244, 122);
-  background: linear-gradient(
-    180deg,
-    rgba(26, 244, 122, 1) 0%,
-    rgba(90, 237, 182, 1) 46%,
-    rgba(8, 156, 255, 1) 100%
-  );
-  padding: 11px;
-  border-bottom-right-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-}
-.search-icon:hover {
-  opacity: 0.6;
 }
 /* width */
 ::-webkit-scrollbar {

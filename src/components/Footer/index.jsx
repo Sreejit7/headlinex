@@ -1,12 +1,38 @@
 import React from "react";
 import { MdArrowUpward } from "react-icons/md";
 import { HashLink } from "react-router-hash-link";
+import {
+  TooltipActionTypes,
+  useTooltipContext,
+} from "../../contexts/useTooltipContext";
 
 const Footer = () => {
+  const {
+    state: { text },
+    dispatch,
+  } = useTooltipContext();
+
+  // On hovering the 'scroll to top' button, show a tooltip
+  const handleMouseHover = (e) => {
+    const { top, left, right } = e.target.getBoundingClientRect();
+    dispatch({
+      type: TooltipActionTypes.CREATE_TOOLTIP,
+      text: "Scroll to top",
+      position: { top: top - 50, left: (left + right) / 2 },
+    });
+  };
+
+  const resetTooltip = () => {
+    dispatch({ type: TooltipActionTypes.DELETE_TOOLTIP });
+  };
+
   return (
-    <footer className="bg-gradient-to-b from-gray-800 to-red-700 py-6 px-4 flex items-center justify-center text-white">
+    <footer className="bg-gradient-to-b from-gray-800 to-gray-700 py-6 px-4 flex items-center justify-center text-white">
       <HashLink
         aria-label="Scroll to top"
+        onMouseEnter={(e) => handleMouseHover(e)}
+        onMouseLeave={resetTooltip}
+        onClick={resetTooltip}
         className="absolute"
         smooth
         to="#top"
@@ -14,7 +40,6 @@ const Footer = () => {
         <MdArrowUpward
           className="absolute bottom-16 text-2xl font-bold animate-[bounce_.8s_ease-in-out_infinite] transition duration-700 hover:text-red-600"
           role="button"
-          title="Back To Top"
         />
       </HashLink>
       <section className="flex-col items-center">
@@ -27,7 +52,7 @@ const Footer = () => {
             href="https://www.sreejit.dev"
             target="_blank"
             rel="noreferrer"
-            className="transition duration-600 hover:underline text-slate-100 hover:text-white"
+            className="transition duration-700 hover:underline text-slate-100 hover:text-white"
           >
             @Sreejit
           </a>{" "}
@@ -36,7 +61,7 @@ const Footer = () => {
             href="https://www.gnews.io"
             target="_blank"
             rel="noreferrer"
-            className="transition duration-600 hover:underline text-slate-100 hover:text-white"
+            className="transition duration-700 hover:underline text-slate-100 hover:text-white"
           >
             GNews
           </a>
