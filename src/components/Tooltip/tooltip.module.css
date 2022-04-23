@@ -1,0 +1,13 @@
+/* pseudo element for tooltip arrow */
+.tooltip::before {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  /* show tooltip arrow at bottom */
+  top: 100%;
+  left: 50%;
+  border-width: 6px;
+  border-style: solid;
+  border-color: #ffffff transparent transparent transparent;
+  opacity: 0.6;
+}

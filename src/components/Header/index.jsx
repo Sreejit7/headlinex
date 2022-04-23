@@ -27,7 +27,9 @@ function Header({ toggle }) {
     >
       <HashLink smooth to="#top" className="logo-link">
         {" "}
-        <h1 className="header__title text-2xl">HEADLINER</h1>{" "}
+        <h1 className="transition duration-700 bg-gradient-to-r from-transparent to-red-700 px-4 py-2 rounded-md shadow-lg text-white text-2xl font-bold hover:ring-1 hover:ring-white">
+          HeadlineX
+        </h1>{" "}
       </HashLink>
       <Search />
     </header>
